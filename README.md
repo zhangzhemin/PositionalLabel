@@ -7,4 +7,5 @@ The training method refers to [Swin-Transformer](https://github.com/microsoft/Sw
 
 For example, to train Positional Label with 4 GPU, run:
 
-python -m torch.distributed.launch --nproc_per_node 4 --master_port 12345  main.py --batch-size 256
+python -m torch.distributed.launch --nproc_per_node 4 --master_port 12345  main.py --cfg configs/swin/swin_tiny_patch4_window7_224.yaml --batch-size 256
+
