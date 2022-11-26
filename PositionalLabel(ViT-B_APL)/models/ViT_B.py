@@ -270,8 +270,8 @@ class VisionTransformer(nn.Module):
 
         if self.dist_token is None:
 
-            patch_feature = x  #   torch.Size([128, 196, 768])
-            Coordinate_feature = self.To2D(patch_feature)  # torch.Size([128, 196, 192])
+            patch_feature = x  #   
+            Coordinate_feature = self.To2D(patch_feature)  #
 
             x_feature = self.avgpool(x.transpose(1, 2))  # B C 1
             x_feature = torch.flatten(x_feature, 1)
@@ -291,7 +291,7 @@ class VisionTransformer(nn.Module):
             else:
                 return (x + x_dist) / 2
         else:
-            x = self.head(x) #torch.Size([256, 1000])
+            x = self.head(x) #
             x_Coordinate = self.head_coordinate(x_Coordinate_feature) 
             
         return x,x_Coordinate.reshape(-1,196)
