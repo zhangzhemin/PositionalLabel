@@ -243,7 +243,7 @@ class VisionTransformer(nn.Module):
             self.has_logits = False
             self.pre_logits = nn.Identity()
 
-        self.To2D = Rasterize_zhang(in_features=768, hidden_features=384, out_features=192, act_layer=act_layer, drop=drop_ratio)
+        self.To2D = Rasterize_zhang(in_features=384, hidden_features=384, out_features=192, act_layer=act_layer, drop=drop_ratio)
         # Classifier head(s)
         self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
         self.head_coordinate = nn.Linear(192, 196) if num_classes > 0 else nn.Identity()
@@ -270,7 +270,7 @@ class VisionTransformer(nn.Module):
 
         if self.dist_token is None:
 
-            patch_feature = x  #   
+            patch_feature = x[:,:,0:384]  #   
             Coordinate_feature = self.To2D(patch_feature)  #
 
             x_feature = self.avgpool(x.transpose(1, 2))  # B C 1
