@@ -3,7 +3,7 @@ This repo is the implementation of "Positional Label for Self-Supervised Vision 
 
 # Usage
 
-The training method refers to [Swin-Transformer](https://github.com/microsoft/Swin-Transformer), we mainly modify ViT_B.py in the "models" folder and the "train_one_epoch" function in main.py.
+The training method refers to [Swin-Transformer](https://github.com/microsoft/Swin-Transformer). For ViT-B_APL, we mainly modify ViT_B.py in the "models" folder and the "train_one_epoch" function in main.py.
 
 For example, to train Positional Label with 4 GPU, run:
 
