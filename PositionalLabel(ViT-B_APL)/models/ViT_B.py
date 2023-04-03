@@ -160,7 +160,7 @@ class Block(nn.Module):
         x = x + self.drop_path(self.mlp(self.norm2(x)))
         return x
 
-class Rasterize_zhang(nn.Module):
+class Coordinate_zhang(nn.Module):
     """
     MLP as used in Vision Transformer, MLP-Mixer and related networks
     """
@@ -243,7 +243,7 @@ class VisionTransformer(nn.Module):
             self.has_logits = False
             self.pre_logits = nn.Identity()
 
-        self.To2D = Rasterize_zhang(in_features=384, hidden_features=384, out_features=192, act_layer=act_layer, drop=drop_ratio)
+        self.To2D = Coordinate_zhang(in_features=384, hidden_features=384, out_features=192, act_layer=act_layer, drop=drop_ratio)
         # Classifier head(s)
         self.head = nn.Linear(self.num_features, num_classes) if num_classes > 0 else nn.Identity()
         self.head_coordinate = nn.Linear(192, 196) if num_classes > 0 else nn.Identity()
