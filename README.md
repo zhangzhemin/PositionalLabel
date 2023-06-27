@@ -8,6 +8,8 @@ This repo is the official implementation of ["Positional Label for Self-Supervis
 **Absolute positional label**:
 ![APL](figures/APL.jpg)
 
+**Relative positional label**:
+![RPL](figures/RPL.jpg)
 
 # Usage
 To train the Positional Label on ImageNet from scratch, run:
