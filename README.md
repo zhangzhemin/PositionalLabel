@@ -1,5 +1,5 @@
 # PositionalLabel
-This repo is the official implementation of ["Positional Label for Self-Supervised Vision Transformer"](https://arxiv.org/pdf/2206.04981.pdf). Modified from [Swin-ViT](https://github.com/microsoft/Swin-Transformer). We mainly modified ViT_B.py and swin_transformer.py in the models folder.
+This repo is the implementation of ["Positional Label for Self-Supervised Vision Transformer"](https://arxiv.org/pdf/2206.04981.pdf).
 
 ## Introduction
 
@@ -47,12 +47,50 @@ This repo is the official implementation of ["Positional Label for Self-Supervis
 | Swin-B + RPL | Mini-ImageNet | 224x224 | 69.11 | 88.02 | 
 | NesT-B + RPL | Mini-ImageNet| 224x224 | **69.56** | **88.67** | 
 
+## Usage
 
-# Usage
-**To train the Positional Label on ImageNet from scratch, run:**
+This repo is modified from ["Swin-ViT"](https://github.com/microsoft/Swin-Transformer). We mainly modified ViT_B.py and swin_transformer.py in the models folder.
 
+### Install
+
+Refer to ["Swin Transformer for Image Classification"](https://github.com/microsoft/Swin-Transformer/blob/main/get_started.md).
+
+### Data preparation
+
+We use standard ImageNet dataset, you can download it from http://image-net.org/. 
+
+- For standard folder dataset, move validation images to labeled sub-folders. The file structure should look like:
+  ```bash
+  $ tree data
+  imagenet
+  ├── train
+  │   ├── class1
+  │   │   ├── img1.jpeg
+  │   │   ├── img2.jpeg
+  │   │   └── ...
+  │   ├── class2
+  │   │   ├── img3.jpeg
+  │   │   └── ...
+  │   └── ...
+  └── val
+      ├── class1
+      │   ├── img4.jpeg
+      │   ├── img5.jpeg
+      │   └── ...
+      ├── class2
+      │   ├── img6.jpeg
+      │   └── ...
+      └── ...
+ 
+  ```
+
+### Training from scratch on ImageNet-1K
+
+To train the Positional Label on ImageNet from scratch, with 2 GPU, run:
+```bash
 python -m torch.distributed.launch --nproc_per_node 2 --master_port 12345  main.py --cfg configs/swin/swin_tiny_patch4_window7_224.yaml --batch-size 320
-
+```
 or
-
+```bash
 python -m torch.distributed.launch --nproc_per_node 2 --master_port 12345  main.py --cfg configs/swin/swin_tiny_patch4_window7_224.yaml --batch-size 256
+```
