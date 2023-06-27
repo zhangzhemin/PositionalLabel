@@ -49,7 +49,7 @@ This repo is the implementation of ["Positional Label for Self-Supervised Vision
 
 ## Usage
 
-This repo is modified from ["Swin-ViT"](https://github.com/microsoft/Swin-Transformer). We mainly modified ViT_B.py and swin_transformer.py in the models folder.
+This code is largely based on ["Swin-ViT"](https://github.com/microsoft/Swin-Transformer). We mainly modified ViT_B.py and swin_transformer.py in the models folder.
 
 ### Install
 
@@ -94,3 +94,7 @@ or
 ```bash
 python -m torch.distributed.launch --nproc_per_node 2 --master_port 12345  main.py --cfg configs/swin/swin_tiny_patch4_window7_224.yaml --batch-size 256
 ```
+## Acknowledgements
+
+This code is largely based on ["Swin-ViT"](https://github.com/microsoft/Swin-Transformer). We thank the authors a lot for their valuable efforts.
+
