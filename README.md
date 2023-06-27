@@ -11,7 +11,7 @@ This repo is the official implementation of ["Positional Label for Self-Supervis
 **Relative positional label**:
 ![RPL](figures/RPL.jpg)
 
-## Main Results on ImageNet-1K
+## Main Results on ImageNet-1K and Mini-ImageNet
 
 **ImageNet-1K trained Positional Label Models**
 
@@ -49,7 +49,7 @@ This repo is the official implementation of ["Positional Label for Self-Supervis
 
 
 # Usage
-To train the Positional Label on ImageNet from scratch, run:
+**To train the Positional Label on ImageNet from scratch, run:**
 
 python -m torch.distributed.launch --nproc_per_node 2 --master_port 12345  main.py --cfg configs/swin/swin_tiny_patch4_window7_224.yaml --batch-size 320
 
