@@ -1,5 +1,5 @@
 # PositionalLabel
-This repo is the implementation of "Positional Label for Self-Supervised Vision Transformer". Modified from [Swin-ViT](https://github.com/microsoft/Swin-Transformer). We mainly modified ViT_B.py and swin_transformer.py in the models folder.
+This repo is the official implementation of ["Positional Label for Self-Supervised Vision Transformer"](https://arxiv.org/pdf/2206.04981.pdf). Modified from [Swin-ViT](https://github.com/microsoft/Swin-Transformer). We mainly modified ViT_B.py and swin_transformer.py in the models folder.
 
 # Usage
 To train the Positional Label on ImageNet from scratch, run:
