@@ -11,6 +11,43 @@ This repo is the official implementation of ["Positional Label for Self-Supervis
 **Relative positional label**:
 ![RPL](figures/RPL.jpg)
 
+## Main Results on ImageNet-1K
+
+**ImageNet-1K trained Positional Label Models**
+
+| name | train | resolution |acc@1 | acc@5 | 
+| :---: | :---: | :---: | :---: | :---: | 
+| ViT-B | ImageNet-1K | 224x224 | 77.91 | 92.48 | 
+| DeiT-B | ImageNet-1K | 224x224 | 81.87 | 93.92 | 
+| Swin-B | ImageNet-1K | 224x224 | 83.35 | 96.38 | 
+| NesT-B | ImageNet-1K | 224x224 | 83.67 | 96.16 | 
+| ViT-B + APL | ImageNet-1K | 224x224 | 79.11 | 93.73 | 
+| DeiT-B + APL | ImageNet-1K | 224x224 | 82.49 | 94.34 | 
+| Swin-B + APL | ImageNet-1K | 224x224 | 83.76 | 96.83 | 
+| NesT-B + APL | ImageNet-1K | 224x224 | **84.13** | **96.85** | 
+| ViT-B + RPL | ImageNet-1K | 224x224 | 79.07 | 93.67 | 
+| DeiT-B + RPL | ImageNet-1K | 224x224 | 82.85 | 94.21 | 
+| Swin-B + RPL | ImageNet-1K | 224x224 | 84.09 | 96.77 | 
+| NesT-B + RPL | ImageNet-1K | 224x224 | 83.93 | 96.81 | 
+
+**Mini-ImageNet trained Positional Label Models**
+
+| name | train | resolution |acc@1 | acc@5 | 
+| :---: | :---: | :---: | :---: | :---: | 
+| ViT-B | Mini-ImageNet | 224x224 | 58.28 | 79.57 | 
+| DeiT-B | Mini-ImageNet | 224x224 | 63.67 | 83.92 | 
+| Swin-B | Mini-ImageNet | 224x224 | 67.39 | 86.88 | 
+| NesT-B | Mini-ImageNet | 224x224 | 67.43 | 86.75 | 
+| ViT-B + APL | Mini-ImageNet | 224x224 | 64.43 | 83.73 | 
+| DeiT-B + APL | Mini-ImageNet | 224x224 | 66.49 | 85.37 | 
+| Swin-B + APL | Mini-ImageNet | 224x224 | 68.91 | 87.86 | 
+| NesT-B + APL | Mini-ImageNet | 224x224 | 68.73 | 87.95 | 
+| ViT-B + RPL | Mini-ImageNet | 224x224 | 63.97 | 83.06 | 
+| DeiT-B + RPL | Mini-ImageNet | 224x224 | 66.85 | 85.22 | 
+| Swin-B + RPL | Mini-ImageNet | 224x224 | 69.11 | 88.02 | 
+| NesT-B + RPL | Mini-ImageNet| 224x224 | **69.56** | **88.67** | 
+
+
 # Usage
 To train the Positional Label on ImageNet from scratch, run:
 
